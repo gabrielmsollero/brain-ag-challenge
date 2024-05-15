@@ -24,7 +24,7 @@ body {
   --background-color: var(--white);
   --text-color: var(--light-gray);
   --text-color-strong: var(--dark-gray);
-  --box-shadow: 0px 0px 2rem rgba(0, 0, 0, 0.35);
+  --box-shadow: 0px 20px 51px -1px rgba(0, 0, 0, 0.35);
 
   color: var(--text-color);
   background-color: var(--background-color);
