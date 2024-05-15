@@ -1,3 +1,9 @@
+import classes from './Footer.module.css';
+
 export default function Footer() {
-  return <h1>Footer</h1>;
+  return (
+    <div className={classes.footer}>
+      <p>© Made by Gabriel Sollero | 2024</p>
+    </div>
+  );
 }
