@@ -8,3 +8,13 @@
   color: var(--background-color);
   box-shadow: var(--box-shadow);
 }
+
+.header > h1 {
+  display: inline-block;
+  margin: 0;
+  font-weight: bolder;
+}
+
+.header > span {
+  padding-bottom: 0.5rem;
+}
