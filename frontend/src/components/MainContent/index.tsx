@@ -12,9 +12,6 @@ export default function MainContent() {
       <StateChartCard />
       <CultureChartCard />
       <SoilUsageChartCard />
-      {/* TODO: grid layout of cards */}
-      {/* TODO: generic card component w/ title */}
-      {/* TODO: individual cards */}
     </main>
   );
 }
