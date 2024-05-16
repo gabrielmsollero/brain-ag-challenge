@@ -1,0 +1,13 @@
+.body {
+  margin-top: 0.5em;
+}
+
+.body p {
+  margin: 0;
+}
+
+.strong {
+  color: var(--text-color-strong);
+  font-weight: bolder;
+  font-size: 1.3em;
+}
