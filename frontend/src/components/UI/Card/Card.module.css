@@ -1,0 +1,13 @@
+.card {
+  min-width: 200px;
+  max-width: 100%;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: var(--box-shadow);
+  z-index: 100;
+}
+
+.card > .title {
+  margin: 0;
+  font-size: 1.2em;
+}
