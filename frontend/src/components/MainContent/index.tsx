@@ -1,3 +1,4 @@
+import AddFarmButton from '../UI/AddFarmButton';
 import CultureChartCard from './CultureChartCard';
 import SoilUsageChartCard from './SoilUsageChartCard';
 import StateChartCard from './StateChartCard';
@@ -12,6 +13,7 @@ export default function MainContent() {
       <StateChartCard />
       <CultureChartCard />
       <SoilUsageChartCard />
+      <AddFarmButton></AddFarmButton>
     </main>
   );
 }

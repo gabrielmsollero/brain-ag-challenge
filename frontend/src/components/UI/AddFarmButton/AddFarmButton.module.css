@@ -1,0 +1,18 @@
+.addFarmButton {
+  position: fixed;
+  bottom: 3rem;
+  right: 3rem;
+  z-index: 100;
+
+  width: 3rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: none;
+  box-shadow: var(--box-shadow);
+
+  font-size: 2rem;
+  font-weight: bolder;
+  color: var(--accent-color);
+
+  cursor: pointer;
+}
