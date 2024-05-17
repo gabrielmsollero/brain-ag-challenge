@@ -1,0 +1,17 @@
+.button,
+.textButton {
+  font-size: 1em;
+  text-transform: uppercase;
+}
+
+.button {
+  background-color: var(--accent-color);
+  color: var(--background-color);
+  padding: 0.5em 1em;
+  border-radius: 0.25em;
+}
+
+.textButton {
+  background-color: transparent;
+  color: var(--accent-color);
+}
