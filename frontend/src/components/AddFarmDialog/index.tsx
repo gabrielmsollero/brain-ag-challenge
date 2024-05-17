@@ -4,9 +4,9 @@ import { useForm, Controller } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
 
+import Select from '../UI/Forms/Select';
 import Button from '../UI/Button';
 import Input from '../UI/Forms/Input';
-import Select from '../UI/Forms/Select';
 import { useUiContext } from '../../contexts/UiContext';
 
 import classes from './AddFarmDialog.module.css';
@@ -15,12 +15,12 @@ const newFarmSchema = z.object({
   cpfCnpj: z.string(),
   farmerName: z.string(),
   farmName: z.string(),
-  stateId: z.coerce.number(),
-  cityId: z.coerce.number(),
+  stateId: z.any(),
+  cityId: z.any(),
   totalArea: z.coerce.number(),
   farmableArea: z.coerce.number(),
   vegetationArea: z.coerce.number(),
-  cultures: z.string(),
+  cultures: z.any().array(),
 });
 
 type newFarmSchema = z.infer<typeof newFarmSchema>;
@@ -29,7 +29,7 @@ export default function AddFarmDialog() {
   const { isAddFarmModalOpen, setIsAddFarmModalOpen } = useUiContext();
   const dialogRef = useRef<HTMLDialogElement>(null);
 
-  const { handleSubmit, control, register } = useForm<newFarmSchema>({
+  const { handleSubmit, control } = useForm<newFarmSchema>({
     resolver: zodResolver(newFarmSchema),
   });
 
@@ -58,9 +58,10 @@ export default function AddFarmDialog() {
       <h2>Add new farm</h2>
       <form onSubmit={handleSubmit(handleAddNewFarm)}>
         <Controller
+          defaultValue=""
           control={control}
           name="cpfCnpj"
-          render={({ field: { onChange, onBlur, value, ref } }) => (
+          render={({ field: { onChange, onBlur, value } }) => (
             <Input
               type="text"
               onChange={onChange}
@@ -71,9 +72,10 @@ export default function AddFarmDialog() {
           )}
         />
         <Controller
+          defaultValue=""
           control={control}
-          name="cpfCnpj"
-          render={({ field: { onChange, onBlur, value, ref } }) => (
+          name="farmerName"
+          render={({ field: { onChange, onBlur, value } }) => (
             <Input
               type="text"
               onChange={onChange}
@@ -84,9 +86,10 @@ export default function AddFarmDialog() {
           )}
         />
         <Controller
+          defaultValue=""
           control={control}
-          name="cpfCnpj"
-          render={({ field: { onChange, onBlur, value, ref } }) => (
+          name="farmName"
+          render={({ field: { onChange, onBlur, value } }) => (
             <Input
               type="text"
               onChange={onChange}
@@ -99,7 +102,7 @@ export default function AddFarmDialog() {
         <Controller
           control={control}
           name="stateId"
-          render={({ field: { onChange, onBlur, value, ref } }) => (
+          render={({ field: { onChange, onBlur, value } }) => (
             <Select
               onChange={onChange}
               onBlur={onBlur}
@@ -121,7 +124,7 @@ export default function AddFarmDialog() {
         <Controller
           control={control}
           name="cityId"
-          render={({ field: { onChange, onBlur, value, ref } }) => (
+          render={({ field: { onChange, onBlur, value } }) => (
             <Select
               onChange={onChange}
               onBlur={onBlur}
@@ -141,9 +144,10 @@ export default function AddFarmDialog() {
           )}
         />
         <Controller
+          defaultValue={0}
           control={control}
           name="totalArea"
-          render={({ field: { onChange, onBlur, value, ref } }) => (
+          render={({ field: { onChange, onBlur, value } }) => (
             <Input
               type="number"
               onChange={onChange}
@@ -154,9 +158,10 @@ export default function AddFarmDialog() {
           )}
         />
         <Controller
+          defaultValue={0}
           control={control}
           name="farmableArea"
-          render={({ field: { onChange, onBlur, value, ref } }) => (
+          render={({ field: { onChange, onBlur, value } }) => (
             <Input
               type="number"
               onChange={onChange}
@@ -167,9 +172,10 @@ export default function AddFarmDialog() {
           )}
         />
         <Controller
+          defaultValue={0}
           control={control}
           name="vegetationArea"
-          render={({ field: { onChange, onBlur, value, ref } }) => (
+          render={({ field: { onChange, onBlur, value } }) => (
             <Input
               type="number"
               onChange={onChange}
@@ -180,15 +186,20 @@ export default function AddFarmDialog() {
           )}
         />
         <Controller
+          defaultValue={[]}
           control={control}
           name="cultures"
-          render={({ field: { onChange, onBlur, value, ref } }) => (
-            <Input
-              type="text"
-              onChange={onChange}
-              onBlur={onBlur}
-              value={value}
+          render={({ field: { onChange, value } }) => (
+            <Select
               label="Culturas"
+              value={value}
+              onChange={onChange}
+              options={[
+                { label: 'A', value: '1' },
+                { label: 'B', value: '2' },
+                { label: 'C', value: '3' },
+              ]}
+              isMulti
             />
           )}
         />

@@ -1,26 +1,21 @@
+import _Select, { Props as _Props } from 'react-select';
+
 import classes from '../Forms.module.css';
 
-interface Option {
+export interface Option {
   label?: string;
   value: any;
 }
 
-interface Props extends React.SelectHTMLAttributes<HTMLSelectElement> {
+interface Props extends _Props<Option> {
   label: string;
-  options?: Option[];
 }
 
-export default function Select({ label, options = [], ...props }: Props) {
+export default function Select({ label, ...props }: Props) {
   return (
     <p className={classes.control}>
       <label htmlFor={label}>{label}</label>
-      <select defaultValue={''} id={label} name={label} {...props} required>
-        {options.map(({ label, value }) => (
-          <option key={value} value={value}>
-            {label ?? value}
-          </option>
-        ))}
-      </select>
+      <_Select id={label} {...props} name={label} />
     </p>
   );
 }
