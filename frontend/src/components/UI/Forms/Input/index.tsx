@@ -10,7 +10,7 @@ export default function Input({ label, ...props }: Props) {
   return (
     <p className={classes.control}>
       <label htmlFor={label}>{label}</label>
-      <input id={label} name={label} {...props} required />
+      <input id={label} name={label} {...props} />
     </p>
   );
 }
