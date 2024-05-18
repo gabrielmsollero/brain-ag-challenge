@@ -8,9 +8,9 @@ interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
 
 export default function Input({ label, ...props }: Props) {
   return (
-    <p className={classes.control}>
+    <div className={classes.control}>
       <label htmlFor={label}>{label}</label>
       <input id={label} name={label} {...props} />
-    </p>
+    </div>
   );
 }
