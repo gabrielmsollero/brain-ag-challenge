@@ -1,0 +1,34 @@
+.modal {
+  border-radius: 0.5rem;
+  border: none;
+  box-shadow: var(--box-shadow);
+  padding: 1rem;
+  /* width: 80%; */
+  max-width: 40rem;
+}
+
+.modal h2 {
+  margin: 0;
+}
+
+.modal::backdrop {
+  background-color: rgba(0, 0, 0, 0.55);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.closeBtn {
+  font-size: 2rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  opacity: 0.6;
+
+  padding: 0.1rem;
+  margin: 0.5rem;
+  border-radius: 50%;
+  aspect-ratio: 1;
+}
