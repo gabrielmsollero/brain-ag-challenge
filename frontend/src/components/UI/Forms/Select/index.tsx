@@ -2,12 +2,7 @@ import _Select, { Props as _Props } from 'react-select';
 
 import classes from '../Forms.module.css';
 
-export interface Option {
-  label?: string;
-  value: any;
-}
-
-interface Props extends _Props<Option> {
+interface Props extends _Props {
   label: string;
 }
 
