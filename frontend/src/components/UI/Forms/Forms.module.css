@@ -12,7 +12,6 @@
 .control input,
 .control select {
   width: 100%;
-  max-width: 20rem;
   font: inherit;
   padding: 0.5rem;
   border-radius: 4px;

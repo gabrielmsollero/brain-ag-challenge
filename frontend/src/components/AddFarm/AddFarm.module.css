@@ -3,8 +3,7 @@
   border: none;
   box-shadow: var(--box-shadow);
   padding: 1rem;
-  /* width: 80%; */
-  max-width: 40rem;
+  width: clamp(20rem, 80%, 40rem);
 }
 
 .modal h2 {
@@ -28,7 +27,18 @@
   opacity: 0.6;
 
   padding: 0.1rem;
-  margin: 0.5rem;
   border-radius: 50%;
   aspect-ratio: 1;
+}
+
+.errors {
+  background-color: #ffa0ae;
+  color: #b24e4e;
+  border-radius: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  font-weight: 500;
+}
+
+.errors ul {
+  padding-left: 1.5rem;
 }
