@@ -7,3 +7,9 @@
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
 }
+
+@media (max-width: 576px) {
+  .mainContent {
+    grid-template-columns: 1fr;
+  }
+}
