@@ -1,0 +1,51 @@
+.tableWrapper {
+  max-width: 100%;
+  overflow-x: scroll;
+}
+
+.table {
+  width: 100%;
+  text-align: center;
+  border-collapse: collapse;
+
+  & td {
+    padding: 0.5rem 0.25rem;
+  }
+
+  & td:first-child {
+    border-radius: 0.25rem 0 0 0.25rem;
+  }
+
+  & td:last-child {
+    border-radius: 0 0.25rem 0.25rem 0;
+  }
+}
+
+.table thead th {
+  border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+  padding-bottom: 0.4rem;
+}
+
+.table > tbody > tr:nth-child(odd) {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.actions > button {
+  color: #4a88a8;
+  background: none;
+}
+
+.actions .edit {
+  font-size: 1.25em;
+}
+
+.actions .delete {
+  font-size: 1.75em;
+  color: #b24e4e;
+}

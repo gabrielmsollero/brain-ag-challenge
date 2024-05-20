@@ -1,5 +1,6 @@
 import AddFarmButton from '../UI/AddFarmButton';
 import CultureChartCard from './CultureChartCard';
+import FarmsTableCard from './FarmsTableCard';
 import SoilUsageChartCard from './SoilUsageChartCard';
 import StateChartCard from './StateChartCard';
 import TotalDataCard from './TotalDataCard';
@@ -13,6 +14,9 @@ export default function MainContent() {
       <StateChartCard />
       <CultureChartCard />
       <SoilUsageChartCard />
+      <div style={{ gridColumn: '1/-1' }}>
+        <FarmsTableCard />
+      </div>
       <AddFarmButton></AddFarmButton>
     </main>
   );
